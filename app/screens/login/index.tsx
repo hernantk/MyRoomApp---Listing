@@ -13,10 +13,11 @@ const LoginScreen = () => {
     return <>
         <TextInput 
             placeholder="login"
+            
             onChangeText={setLogin}
             />
         <TextInput
-            placeholder="password" 
+            placeholder="password"
             onChangeText={setPassword}
             />
         <Button 

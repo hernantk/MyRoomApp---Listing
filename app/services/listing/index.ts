@@ -10,13 +10,10 @@ export interface Response {
 export const listingService = async(userId: String): Promise<Array<ListingResult>> => {
     
     try { 
-        let response = await (await api.get<Response>("/listing")).data.listing.filter( item =>{
+        return await (await api.get<Response>("/listing")).data.listing.filter( item =>{
             return item.userId !== userId
         })
         
-        
-        return response
-   
     } catch(error) {
         throw new ListingException('Algo deu Errado!')
     }

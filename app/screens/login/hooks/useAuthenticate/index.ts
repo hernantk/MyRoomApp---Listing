@@ -23,9 +23,8 @@ const useAuthenticate = (onError: (error: Error) => void) => {
                 login,
                 password
             })
-            
-            navigation.navigate(ROUTE_TAB)    
             authActions.login(result)
+            navigation.navigate(ROUTE_TAB)    
 
         } catch(error) {
             onError(error)

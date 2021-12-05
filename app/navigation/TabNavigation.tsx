@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { ROUTE_LISTINGS, ROUTE_MY_LISTINGS } from './AppRoutes';
-import { Listing } from './../screens/listing/index';
-import { MyListings } from '../screens/myListings';
+import { Listing } from '../screens/list/listing/index';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'native-base';
+import { MyListings } from '../screens/list/myListings';
 
 
 const Tab = createBottomTabNavigator()

@@ -1,7 +1,7 @@
 import React  from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ROUTE_TAB, ROUTE_LISTING_DETAILHS, ROUTE_LOGIN, RootStackParamList } from './AppRoutes';
+import { ROUTE_TAB, ROUTE_LISTING_DETAILS, ROUTE_LOGIN, RootStackParamList } from './AppRoutes';
 import TabNavigation from './TabNavigation';
 import { ListingDetails } from './../screens/listingDetails/index';
 import LoginScreen from './../screens/login/index';
@@ -17,7 +17,7 @@ const AppNavigation = () =>{
                 <Stack.Navigator> 
                     <Stack.Screen name={ROUTE_LOGIN} component={LoginScreen} options={{headerShown:false}}/>
                     <Stack.Screen name={ROUTE_TAB} component={TabNavigation} options={{headerShown:false}}/>
-                    <Stack.Screen name={ROUTE_LISTING_DETAILHS} component={ListingDetails} options={{title:"Detalhes"}} />
+                    <Stack.Screen name={ROUTE_LISTING_DETAILS} component={ListingDetails} options={{title:"Detalhes"}} />
                 </Stack.Navigator>
             </NavigationContainer>
 
