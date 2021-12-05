@@ -1,12 +1,13 @@
+import React  from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ROUTE_TAB, ROUTE_LISTING_DETAILHS, ROUTE_LOGIN } from './AppRoutes';
+import { ROUTE_TAB, ROUTE_LISTING_DETAILHS, ROUTE_LOGIN, RootStackParamList } from './AppRoutes';
 import TabNavigation from './TabNavigation';
 import { ListingDetails } from './../screens/listingDetails/index';
 import LoginScreen from './../screens/login/index';
 
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator<RootStackParamList>()
 
 const AppNavigation = () =>{
 
