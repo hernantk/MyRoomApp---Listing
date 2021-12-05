@@ -22,7 +22,6 @@ const LoginScreen = () => {
         <Button 
             title="Login" 
             onPress={authenticate} />
-        <Text>Usuário Logado: {authState.userName} </Text>
     </>    
 }
 
