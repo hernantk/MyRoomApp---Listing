@@ -15,11 +15,15 @@ const useAuthenticate = (onError: (error: Error) => void) => {
     const navigation = useNavigation<TabPaneProps>();
     const authenticate = async () => {
         
+        
+        
         try { 
+            
             let result = await authService.login({ 
                 login,
                 password
             })
+            
             navigation.navigate(ROUTE_TAB)    
             authActions.login(result)
 

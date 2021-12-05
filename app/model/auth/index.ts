@@ -18,19 +18,10 @@ export interface ListingResult  {
     id: string;
     title: string;
     description: string;
-    price: Number;
-    creationDate: Date;
-}
-
-
-export interface DetailsListingResult { 
-    id: string;
-    title: string;
-    description: string;
-    price: Number;
+    price: number;
     listingTypeId:string;
     userId:string;
     creationDate: Date;
-    numberOfRatings: Number;
-    rating: Number;
+    numberOfRatings: number;
+    rating: number;
 }

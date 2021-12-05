@@ -1,13 +1,13 @@
 import { useNavigation } from "@react-navigation/core"
-import { Card, FlatList } from "native-base"
-import React, { useCallback, useEffect, useState } from "react"
+import { Card, FlatList, Text } from "native-base"
+import React, { useCallback, useContext, useEffect, useState } from "react"
 import { Pressable } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { ListingResult } from "../../model/auth"
-import { ROUTE_MY_LISTINGS } from "../../navigation/AppRoutes"
 import listingService from "../../services/listing"
 import { TabPaneProps } from 'semantic-ui-react';
 import { ROUTE_LISTING_DETAILHS } from './../../navigation/AppRoutes';
+import { AuthContext } from './../../store/context/auth/index';
 
 export const Listing = () =>{
 
@@ -15,20 +15,27 @@ export const Listing = () =>{
     
 
     const [listing,setListing] = useState<Array<ListingResult>>()
+    const {authState} = useContext(AuthContext)
 
     
 
     useEffect(() => {
         const load = async () => {
-            setListing(await listingService())
+            setListing(await listingService(authState.userId))
         }
         load()
-        console.log(listing);
         
     },[])
 
     const openItem = (item) => {
         navigation.navigate(ROUTE_LISTING_DETAILHS, item)
+    }
+
+    const rating = (rating:number,numberOfRatings:number)=>{
+            let result = rating / numberOfRatings
+            if(result>0){
+                return (<Text>Nota: {result}</Text>)
+            }
     }
 
 
@@ -43,7 +50,12 @@ export const Listing = () =>{
                 renderItem={({item})=>{
                     return(
                     <Pressable onPress={()=>openItem(item)}>
-                        <Card marginBottom={2} rounded={40}>Teste</Card>
+                        <Card marginBottom={2} rounded={40}>
+                            <Text>{item.title}</Text>
+                            <Text>{item.description}</Text>
+                            <Text>Valor: {item.price}</Text>
+                            {rating(item.rating,item.numberOfRatings)}
+                        </Card>
                     </Pressable>
                     )
                 }}
