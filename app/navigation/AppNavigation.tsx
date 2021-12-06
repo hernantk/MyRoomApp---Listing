@@ -18,7 +18,7 @@ const AppNavigation = () =>{
                 <Stack.Navigator> 
                     <Stack.Screen name={ROUTE_LOGIN} component={LoginScreen} options={{headerShown:false}}/>
                     <Stack.Screen name={ROUTE_TAB} component={TabNavigation} options={{headerShown:false}}/>
-                    <Stack.Screen name={ROUTE_NEW_LISTING} component={NewListing} options={{title:"Detalhes"}} />
+                    <Stack.Screen name={ROUTE_NEW_LISTING} component={NewListing} options={{title:"Novo Anuncio"}} />
                     <Stack.Screen name={ROUTE_LISTING_DETAILS} component={ListingDetails} options={{title:"Detalhes"}} />
                 </Stack.Navigator>
             </NavigationContainer>
