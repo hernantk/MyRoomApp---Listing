@@ -1,4 +1,3 @@
-import { useRoute } from "@react-navigation/core"
 import React, { useContext, useEffect, useState } from "react"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { ListingResult } from "../../../model/auth"
@@ -8,7 +7,6 @@ import RenderList from ".."
 
 export const Listing = () =>{
 
-    const route = useRoute()
     const [listing,setListing] = useState<Array<ListingResult>>()
     const {authState} = useContext(AuthContext)
     
