@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react"
 import { Alert, Text, TextInput } from "react-native"
 import { ListingType } from "../../model/auth"
 import { Button, Input, Select, TextArea } from 'native-base';
-import listingTypeService from "../../services/listingType"
 import useNewListing from "./hooks/useNewListing"
+import { listingTypeService } from "../../services/listingType";
 
 export const NewListing = () =>{
 

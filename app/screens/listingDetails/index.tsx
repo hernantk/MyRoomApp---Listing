@@ -1,13 +1,15 @@
 import { useRoute } from "@react-navigation/core"
 import React, { useEffect, useState } from "react"
 import { Text } from "react-native"
-import { ListingResult, ListingType } from "../../model/auth";
-import listingTypeService from "../../services/listingType";
+import { ListingResult, ListingType, User } from "../../model/auth";
+import { listingTypeServiceId } from "../../services/listingType";
+import { listingUserById } from "../../services/user";
 
 export const ListingDetails = () =>{
 
     const route = useRoute()
-    const [listingType,setListingType] = useState<Array<ListingType>>()
+    const [listingType,setListingType] = useState<ListingType>()
+    const [user,setUser] = useState<User>()
     let listing:ListingResult = route.params
 
     const rating = (rating:number,numberOfRatings:number)=>{
@@ -19,25 +21,24 @@ export const ListingDetails = () =>{
 
     useEffect(()=>{
         const getListing = async() => {
-            setListingType(await listingTypeService())
+            setListingType(await listingTypeServiceId(listing.listingTypeId))
+            setUser(await listingUserById(listing.userId))
         }
         getListing()
         
     },[])
-
-    if(listingType){
-        console.log(listingType.filter(item=>{
-            item._id === listing._id
-        }))
-    }
+    
+    
     
     return(<>
 
         <Text> {listing.title} </Text>
         <Text> {listing.description} </Text>
         <Text> {listing.price} </Text>
-        <Text> {listing.userId} </Text>
+        <Text> {user && user.name} </Text>
         <Text> {listing.creationDate} </Text>
+        <Text> {listingType && listingType.name} </Text>
+        
         {rating(listing.rating,listing.numberOfRatings)}
         </>
     )

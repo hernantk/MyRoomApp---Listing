@@ -1,7 +1,7 @@
 import React,{ useState, useContext } from 'react'
 import { AuthContext } from '../../../../store/context/auth'
 import { useNavigation } from "@react-navigation/core"
-import { ROUTE_MY_LISTINGS, ROUTE_TAB } from '../../../../navigation/AppRoutes';
+import { ROUTE_MY_LISTINGS } from '../../../../navigation/AppRoutes';
 import { TabPaneProps } from 'semantic-ui-react';
 import newListingService from '../../../../services/newListing';
 
