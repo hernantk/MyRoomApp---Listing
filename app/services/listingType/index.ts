@@ -1,5 +1,6 @@
 import { ListingTypeException } from "../../exception";
 import { ListingType } from "../../model/auth";
+
 import api from "../api";
 import { URL_LISTING_TYPE } from "../routes";
 
