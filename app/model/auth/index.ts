@@ -34,3 +34,8 @@ export interface NewListing  {
     userId:string;
 }
 
+export interface User  { 
+    _id: string;
+    name: string;
+}
+
