@@ -10,12 +10,12 @@ export interface AuthResult {
 }
 
 export interface ListingType { 
-    id: string;
+    _id: string;
     name: string;
 }
 
 export interface ListingResult  { 
-    id: string;
+    _id: string;
     title: string;
     description: string;
     price: number;
@@ -25,3 +25,12 @@ export interface ListingResult  {
     numberOfRatings: number;
     rating: number;
 }
+
+export interface NewListing  { 
+    title: string;
+    description: string;
+    price: number;
+    listingTypeId:string;
+    userId:string;
+}
+

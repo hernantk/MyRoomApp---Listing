@@ -1,6 +1,7 @@
 import { ListingException } from "../../exception";
 import { ListingResult } from "../../model/auth";
 import api from "../api";
+import { URL_LISTING } from "../routes";
 
 
 export interface Response {
@@ -10,7 +11,7 @@ export interface Response {
 export const listingService = async(userId: String): Promise<Array<ListingResult>> => {
     
     try { 
-        return await (await api.get<Response>("/listing")).data.listing.filter( item =>{
+        return await (await api.get<Response>(URL_LISTING)).data.listing.filter( item =>{
             return item.userId !== userId
         })
         
