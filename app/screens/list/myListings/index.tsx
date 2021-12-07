@@ -1,3 +1,4 @@
+import { useRoute } from "@react-navigation/core"
 import React, { useContext, useEffect, useState } from "react"
 import { SafeAreaView } from "react-native-safe-area-context"
 import RenderList from ".."
@@ -11,14 +12,12 @@ export const MyListings = () =>{
     const [myListing,setMyListing] = useState<Array<ListingResult>>()
     const {authState} = useContext(AuthContext)
 
-    
 
     useEffect(() => {
         const load = async () => {
             setMyListing(await myListingService(authState.userId))
-        }
+        }        
         load()
-        
     },[])
 
 

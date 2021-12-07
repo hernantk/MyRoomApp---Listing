@@ -18,10 +18,11 @@ const useAuthenticate = (onError: (error: Error) => void) => {
         
         
         try { 
-            
+            let login = "padrao@gmail.com"
+            let password = "admin"
             let result = await authService.login({ 
-                login,
-                password
+                login,password
+                
             })
             authActions.login(result)
             navigation.navigate(ROUTE_TAB)    

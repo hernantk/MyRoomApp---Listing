@@ -9,11 +9,11 @@ const LoginScreen = () => {
     })
 
     const { authState } = useContext(AuthContext)
+    
 
     return <>
         <TextInput 
             placeholder="login"
-            
             onChangeText={setLogin}
             />
         <TextInput

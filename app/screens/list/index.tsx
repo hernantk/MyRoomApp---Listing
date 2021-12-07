@@ -6,11 +6,6 @@ import { TabPaneProps } from 'semantic-ui-react';
 import { useNavigation } from "@react-navigation/core";
 
 
-
-
-
-
-
 const RenderList = ({data}) =>{
     const navigation = useNavigation<TabPaneProps>()
 
