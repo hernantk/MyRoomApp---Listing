@@ -18,8 +18,6 @@ const useAuthenticate = (onError: (error: Error) => void) => {
         
         
         try { 
-            let login = "padrao@gmail.com"
-            let password = "admin"
             let result = await authService.login({ 
                 login,password
                 

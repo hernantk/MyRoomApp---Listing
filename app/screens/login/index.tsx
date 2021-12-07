@@ -1,5 +1,6 @@
+import { Button, Input } from 'native-base'
 import React, { useContext, useReducer } from 'react'
-import { TextInput, Button, Alert, Text } from 'react-native'
+import { Alert } from 'react-native'
 import { AuthContext } from '../../store/context/auth'
 import useAuthenticate from './hooks/useAuthenticate'
 
@@ -12,17 +13,17 @@ const LoginScreen = () => {
     
 
     return <>
-        <TextInput 
+        <Input 
             placeholder="login"
             onChangeText={setLogin}
             />
-        <TextInput
+        <Input
+            type="password"
             placeholder="password"
             onChangeText={setPassword}
             />
         <Button 
-            title="Login" 
-            onPress={authenticate} />
+            onPress={authenticate} >Login</Button>
     </>    
 }
 
